@@ -1,3 +1,8 @@
+.header {
+    display: block;
+    margin: auto;
+}
+
 .burger-menu {
     height: 500px;
     margin-left: 100px;
@@ -9,10 +14,12 @@
 }
 
 .devoured{
+    margin-right: 150px;
     float: right;
 }
 
 .undevoured {
+    margin-left: 150px;
     float: left;
 }
 
@@ -21,18 +28,13 @@
     width: 200px;
     padding: 5px;
     margin: 5px;
-    background: #faebd7;
-}
-
-
-.label {
-  font-weight: bold;
+    background: #F8D80F;
 }
 
 .create-form {
   padding: 5px;
   margin: 5px;
-  background: aqua;
+  background: #F24211;
 }
 
 .form-group {
