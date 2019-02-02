@@ -6,7 +6,6 @@
     {{#each burgers}}
         {{#if devoured}}
             {{burger_name}}
-
         {{/if}}
     {{/each}}
 </ul>
@@ -19,7 +18,7 @@
             {{burger_name}}
 
             <button class="change-devoured" data-id="{{id}}" data-devoured="{{devoured}}">
-                {{#if devoured}}REQUEST ANOTHER!{{else}}DEVOUR!{{/if}}
+                DEVOUR!
             </button>
         {{/unless}}
     {{/each}}
@@ -31,12 +30,6 @@
     <div class="form-group">
         <label for="burger">BURGER NAME</label>
         <input type="text" id="burger" name="name">
-    </div>
-
-    <div class="form-group">
-        <label for="devoured"></label><br>
-        <input type="radio" name="devoured" value="0" checked>UNDEVOURED<br>
-        <input type="radio" name="devoured" value="1"> PREVIOUSLY DEVOURED
     </div>
 
     <button type="submit">ADD THAT BURGER</button>

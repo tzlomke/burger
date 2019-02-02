@@ -17,7 +17,7 @@ function objToSql(ob) {
         var value = ob[key];
 
         if (Object.hasOwnProperty.call(ob, key)) {
-            if(typeof value === "string" && value.indexOf(" ") >= 0) {
+            if (typeof value === "string" && value.indexOf(" ") >= 0) {
                 value = "'" + value + "'";
             }
 
@@ -29,9 +29,9 @@ function objToSql(ob) {
 };
 
 var orm = {
-    selectAll: function(tableInput, cb) {
+    selectAll: function (tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";
-        connection.query(queryString, function(err, result) {
+        connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }
@@ -40,30 +40,30 @@ var orm = {
         })
     },
 
-    insertOne: function(table, cols, vals, cb) {
+    insertOne: function (table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table +
             " (" + cols.toString() + ") " + "VALUES " +
             " (" + printQuestionMarks(vals.length) + ") ";
 
-            console.log(queryString);
+        console.log(queryString);
 
-            connection.query(queryString, vals, function(err, result) {
-                if (err) {
-                    throw err;
-                }
+        connection.query(queryString, vals, function (err, result) {
+            if (err) {
+                throw err;
+            }
 
-                cb(result);
-            });
+            cb(result);
+        });
     },
 
-    updateOne: function(table, objColVales, condition, cb) {
-        var queryString = "Update" + table +
-            " SET " + objToSql(objColVales) + 
+    updateOne: function (table, objColVales, condition, cb) {
+        var queryString = "UPDATE " + table +
+            " SET " + objToSql(objColVales) +
             " WHERE " + condition;
 
         console.log(queryString);
 
-        connection.query(queryString, function(err, results) {
+        connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }

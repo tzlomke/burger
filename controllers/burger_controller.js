@@ -3,8 +3,8 @@ var router = express.Router();
 
 var burger = require("../models/burger");
 
-router.get("/", function(req, res) {
-    burger.selectAll(function(data) {
+router.get("/", function (req, res) {
+    burger.selectAll(function (data) {
         var hbsObject = {
             burgers: data
         };
@@ -14,23 +14,24 @@ router.get("/", function(req, res) {
     });
 });
 
-router.post("/api/burgers", function(req, res) {
-    burger.insertOne(["burger_name"], [req.body.name], function(result) {
-        res.json({ id: result.InsertId });
+router.post("/api/burgers", function (req, res) {
+    burger.insertOne(["burger_name"], [req.body.name], function (result) {
+        res.json({
+            id: result.InsertId
+        });
     });
 });
 
-router.put("/api/burgers/:id", function(req, res) {
+router.put("/api/burgers/:id", function (req, res) {
     var condition = "id = " + req.params.id;
 
     console.log("condition", condition);
 
-    burger.updateOne(
-        {
+    burger.updateOne({
             devoured: req.body.devoured
         },
         condition,
-        function(result) {
+        function (result) {
             if (result.changedRows === 0) {
                 return res.status(404).end();
             }
