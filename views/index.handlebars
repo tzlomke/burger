@@ -1,32 +1,40 @@
 <h1>EAT A BURGER</h1>
 
-<h2>PREVIOUSLY DEVOURED</h2>
+<div class="burger-menu">
+    
+    <div class="devoured">
+        <h2>PREVIOUSLY DEVOURED</h2>
 
-<ul>
-    {{#each burgers}}
-        {{#if devoured}}
-            <li>
-                {{burger_name}}
-            </li>
-        {{/if}}
-    {{/each}}
-</ul>
+        <ul>
+            {{#each burgers}}
+                {{#if devoured}}
+                    <li class="burger">
+                        {{burger_name}}
+                    </li>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </div>
 
-<h2>UNDEVOURED</h2>
+    <div class="undevoured">
+        <h2>UNDEVOURED</h2>
 
-<ul>
-    {{#each burgers}}
-        {{#unless devoured}}
-            <li>
-                {{burger_name}}
+        <ul>
+            {{#each burgers}}
+                {{#unless devoured}}
+                    <li class="burger">
+                        {{burger_name}}
 
-                <button class="change-devoured" data-id="{{id}}" data-devoured="{{devoured}}">
-                    DEVOUR!
-                </button>
-            </li>
-        {{/unless}}
-    {{/each}}
-</ul>
+                        <button class="change-devoured" data-id="{{id}}" data-devoured="{{devoured}}">
+                            DEVOUR!
+                        </button>
+                    </li>
+                {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+    
+</div>
 
 <h2>ADD ANOTHER BURGER</h2>
 <form class="create-form">

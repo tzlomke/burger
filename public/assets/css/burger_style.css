@@ -1,8 +1,29 @@
-li {
-  padding: 5px;
-  margin: 5px;
-  background: #faebd7;
+.burger-menu {
+    height: 500px;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-image: url("../img/big-hamburger.jpg");
+    background-size: 20%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
+.devoured{
+    float: right;
+}
+
+.undevoured {
+    float: left;
+}
+
+.burger {
+    display: block;
+    width: 200px;
+    padding: 5px;
+    margin: 5px;
+    background: #faebd7;
+}
+
 
 .label {
   font-weight: bold;
@@ -17,3 +38,4 @@ li {
 .form-group {
   margin-bottom: 5px;
 }
+
